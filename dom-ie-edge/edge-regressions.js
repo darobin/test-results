@@ -12,4 +12,4 @@ for (var file in data) {
     }
 }
 
-console.log(regressions);
+require("fs").writeFileSync("regressions.json", JSON.stringify(regressions, null, 4), "utf8");

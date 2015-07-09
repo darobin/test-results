@@ -1,978 +1,1958 @@
-[ { file: '/dom/events/Event-defaultPrevented.html',
-    subtest: 'initEvent should unset defaultPrevented.' },
-  { file: '/dom/interfaces.html',
-    subtest: 'NodeFilter interface: existence and properties of interface object' },
-  { file: '/dom/nodes/DOMImplementation-createDocument.html',
-    subtest: 'createDocument test 129: "http://www.w3.org/2000/xmlns/","1foo",null,"INVALID_CHARACTER_ERR"' },
-  { file: '/dom/nodes/Document-createElementNS.html',
-    subtest: 'createElementNS test 129: "http://www.w3.org/2000/xmlns/","1foo","INVALID_CHARACTER_ERR"' },
-  { file: '/dom/nodes/Document-createElementNS.html',
-    subtest: 'createElementNS test 168: "http://www.w3.org/2000/xmlns/","","INVALID_CHARACTER_ERR"' },
-  { file: '/dom/traversal/TreeWalker-basic.html',
-    subtest: 'Give an invalid root node to document.createTreeWalker().' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '16,1: resulting range position for range [paras[0], 0, paras[0], 1], node paras[0].firstChild' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '30,3: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node foreignPara1' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '30,4: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node foreignPara1.firstChild' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '30,10: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node foreignPara2' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '30,12: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node xmlElement' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '30,13: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node detachedTextNode' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '30,14: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node foreignTextNode' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '30,15: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node processingInstruction' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '31,0: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node paras[0]' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '31,1: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node paras[0].firstChild' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '31,2: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node paras[1].firstChild' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '31,5: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node detachedPara1' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '31,6: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node detachedPara1.firstChild' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '31,12: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node xmlElement' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '31,15: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node processingInstruction' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '31,17: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node comment' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,0: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node paras[0]' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,1: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node paras[0].firstChild' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,2: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node paras[1].firstChild' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,3: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node foreignPara1' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,4: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node foreignPara1.firstChild' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,5: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node detachedPara1' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,6: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node detachedPara1.firstChild' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,8: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node detachedDiv' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,10: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node foreignPara2' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,14: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node foreignTextNode' },
-  { file: '/dom/ranges/Range-insertNode.html',
-    subtest: '32,17: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node comment' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(376), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(0), with selected range collapsed at (paras[0].firstChild, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(1), with selected range collapsed at (paras[0].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(paras[0].firstChild.length), with selected range collapsed at (paras[0].firstChild, paras[0].firstChild.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(1), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(2), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(3), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.splitText(0), with selected range collapsed at (paras[1].firstChild, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.splitText(1), with selected range collapsed at (paras[1].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.splitText(paras[1].firstChild.length), with selected range collapsed at (paras[1].firstChild, paras[1].firstChild.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.splitText(1), with selected range collapsed at (xmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.splitText(xmlTextNode.length), with selected range collapsed at (xmlTextNode, xmlTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(1), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(1), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(1), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(1), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(2), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(3), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(1), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(2), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.splitText(3), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(376, "foo"), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(1, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(2, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(3, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(376, ""), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(1, ""), with selected range collapsed at (paras[0].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(1, ""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(2, ""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(3, ""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.insertData(1, ""), with selected range collapsed at (paras[1].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.insertData(1, ""), with selected range collapsed at (xmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.insertData(detachedTextNode.length, ""), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.insertData(detachedForeignTextNode.length, ""), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.insertData(detachedXmlTextNode.length, ""), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.insertData(376, "foo"), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.insertData(0, "foo"), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.insertData(376, ""), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.insertData(0, ""), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.insertData(0, "foo"), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.insertData(0, ""), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(1, "foo"), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(1, "foo"), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(1, "foo"), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(1, "foo"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(2, "foo"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(3, "foo"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(1, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(2, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.insertData(3, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData("foo"), with selected range collapsed at (paras[0].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData("foo"), with selected range on paras[0].firstChild from 1 to paras[0].firstChild.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData("foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData(""), with selected range collapsed at (paras[0].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData(""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.appendData("foo"), with selected range collapsed at (paras[1].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.appendData(""), with selected range collapsed at (paras[1].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.appendData("foo"), with selected range collapsed at (xmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.appendData(""), with selected range collapsed at (xmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.appendData("foo"), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.appendData(""), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.appendData("foo"), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.appendData(""), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData(""), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData(""), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData(""), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData(""), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData(""), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData("foo"), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.appendData("foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(376, 2), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(1, 2), with selected range collapsed at (paras[0].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(1, 2), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(2, 2), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(3, 2), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(376, 0), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(0, 0), with selected range collapsed at (paras[0].firstChild, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(1, 0), with selected range collapsed at (paras[0].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(paras[0].firstChild.length, 0), with selected range collapsed at (paras[0].firstChild, paras[0].firstChild.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(1, 0), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(2, 0), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(3, 0), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(376, 631), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.deleteData(1, 2), with selected range collapsed at (paras[1].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.deleteData(0, 0), with selected range collapsed at (paras[1].firstChild, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.deleteData(1, 0), with selected range collapsed at (paras[1].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.deleteData(paras[1].firstChild.length, 0), with selected range collapsed at (paras[1].firstChild, paras[1].firstChild.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.deleteData(1, 2), with selected range collapsed at (xmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.deleteData(1, 0), with selected range collapsed at (xmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.deleteData(xmlTextNode.length, 0), with selected range collapsed at (xmlTextNode, xmlTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.deleteData(detachedTextNode.length, 2), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.deleteData(0, 631), with unselected range collapsed at (detachedTextNode, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.deleteData(1, 631), with unselected range collapsed at (detachedTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.deleteData(detachedTextNode.length, 631), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.deleteData(1, 631), with unselected range on detachedTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.deleteData(2, 631), with unselected range on detachedTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.deleteData(3, 631), with unselected range on detachedTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.deleteData(detachedForeignTextNode.length, 2), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.deleteData(0, 631), with unselected range collapsed at (detachedForeignTextNode, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.deleteData(1, 631), with unselected range collapsed at (detachedForeignTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.deleteData(detachedForeignTextNode.length, 631), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.deleteData(1, 631), with unselected range on detachedForeignTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.deleteData(2, 631), with unselected range on detachedForeignTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.deleteData(3, 631), with unselected range on detachedForeignTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.deleteData(detachedXmlTextNode.length, 2), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.deleteData(0, 631), with unselected range collapsed at (detachedXmlTextNode, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.deleteData(1, 631), with unselected range collapsed at (detachedXmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.deleteData(detachedXmlTextNode.length, 631), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.deleteData(1, 631), with unselected range on detachedXmlTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.deleteData(2, 631), with unselected range on detachedXmlTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.deleteData(3, 631), with unselected range on detachedXmlTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(376, 2), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(0, 2), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(376, 0), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(0, 0), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(1, 0), with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(comment.length, 0), with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(1, 0), with selected range on comment from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(2, 0), with selected range on comment from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(3, 0), with selected range on comment from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(376, 631), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.deleteData(0, 631), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.deleteData(0, 2), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.deleteData(0, 0), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.deleteData(1, 0), with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.deleteData(xmlComment.length, 0), with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.deleteData(0, 631), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(1, 2), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(1, 2), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(1, 2), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(1, 2), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(2, 2), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(3, 2), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(1, 2), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(2, 2), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.deleteData(3, 2), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(376, 0, "foo"), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 0, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 0, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 0, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(376, 0, ""), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 0, ""), with selected range collapsed at (paras[0].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 0, ""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 0, ""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 0, ""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(376, 1, "foo"), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 1, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 1, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 1, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(376, 1, ""), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 1, ""), with selected range collapsed at (paras[0].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 1, ""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 1, ""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 1, ""), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(376, 47, "foo"), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 47, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 47, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 47, "foo"), with selected range on paras[0].firstChild from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(376, 47, ""), with selected range on paras[0].firstChild from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.replaceData(1, 0, ""), with selected range collapsed at (paras[1].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[1].firstChild.replaceData(1, 1, ""), with selected range collapsed at (paras[1].firstChild, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.replaceData(1, 0, ""), with selected range collapsed at (xmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlTextNode.replaceData(1, 1, ""), with selected range collapsed at (xmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.replaceData(detachedTextNode.length, 0, ""), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.replaceData(detachedTextNode.length, 1, ""), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.replaceData(0, 47, ""), with unselected range collapsed at (detachedTextNode, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.replaceData(1, 47, ""), with unselected range collapsed at (detachedTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.replaceData(detachedTextNode.length, 47, ""), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.replaceData(1, 47, ""), with unselected range on detachedTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.replaceData(2, 47, ""), with unselected range on detachedTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedTextNode.replaceData(3, 47, ""), with unselected range on detachedTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.replaceData(detachedForeignTextNode.length, 0, ""), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.replaceData(detachedForeignTextNode.length, 1, ""), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.replaceData(0, 47, ""), with unselected range collapsed at (detachedForeignTextNode, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.replaceData(1, 47, ""), with unselected range collapsed at (detachedForeignTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.replaceData(detachedForeignTextNode.length, 47, ""), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.replaceData(1, 47, ""), with unselected range on detachedForeignTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.replaceData(2, 47, ""), with unselected range on detachedForeignTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedForeignTextNode.replaceData(3, 47, ""), with unselected range on detachedForeignTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.replaceData(detachedXmlTextNode.length, 0, ""), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.replaceData(detachedXmlTextNode.length, 1, ""), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.replaceData(0, 47, ""), with unselected range collapsed at (detachedXmlTextNode, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.replaceData(1, 47, ""), with unselected range collapsed at (detachedXmlTextNode, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.replaceData(detachedXmlTextNode.length, 47, ""), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.replaceData(1, 47, ""), with unselected range on detachedXmlTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.replaceData(2, 47, ""), with unselected range on detachedXmlTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedXmlTextNode.replaceData(3, 47, ""), with unselected range on detachedXmlTextNode from 1 to 3' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(376, 0, "foo"), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(0, 0, "foo"), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(376, 0, ""), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(0, 0, ""), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(376, 1, "foo"), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(0, 1, "foo"), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(376, 1, ""), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(0, 1, ""), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(376, 47, "foo"), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(0, 47, "foo"), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(376, 47, ""), with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.replaceData(0, 47, ""), with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.replaceData(0, 0, "foo"), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.replaceData(0, 0, ""), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.replaceData(0, 1, "foo"), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.replaceData(0, 1, ""), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.replaceData(0, 47, "foo"), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.replaceData(0, 47, ""), with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 0, "foo"), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 0, "foo"), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 0, "foo"), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 0, "foo"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 0, "foo"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 0, "foo"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 0, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 0, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 0, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 1, "foo"), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 1, "foo"), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 1, "foo"), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 1, "foo"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 1, "foo"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 1, "foo"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 1, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 1, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 1, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 47, "foo"), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(1, 47, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(2, 47, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].firstChild.replaceData(3, 47, "foo"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "foo", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = comment.data, with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "foo", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += comment.data, with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "foo", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = comment.textContent, with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "foo", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += comment.textContent, with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "foo", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = comment.nodeValue, with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "foo", with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += comment.nodeValue, with selected range collapsed at (comment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "foo", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = comment.data, with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "foo", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += comment.data, with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "foo", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = comment.textContent, with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "foo", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += comment.textContent, with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "foo", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = comment.nodeValue, with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "foo", with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += comment.nodeValue, with selected range on comment from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "foo", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = comment.data, with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "foo", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += comment.data, with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "foo", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = comment.textContent, with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "foo", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += comment.textContent, with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "foo", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = comment.nodeValue, with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "foo", with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += comment.nodeValue, with selected range collapsed at (comment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "foo", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = comment.data, with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "foo", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += comment.data, with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "foo", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = comment.textContent, with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "foo", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += comment.textContent, with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "foo", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = comment.nodeValue, with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "foo", with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += comment.nodeValue, with selected range on comment from 0 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "foo", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = comment.data, with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "foo", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += comment.data, with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "foo", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = comment.textContent, with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "foo", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += comment.textContent, with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "foo", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = comment.nodeValue, with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "foo", with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += comment.nodeValue, with selected range on comment from 1 to comment.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = "foo", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data = comment.data, with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += "foo", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.data += comment.data, with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = "foo", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent = comment.textContent, with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += "foo", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.textContent += comment.textContent, with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = "foo", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue = comment.nodeValue, with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += "foo", with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'comment.nodeValue += comment.nodeValue, with selected range collapsed at (comment, comment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data = "", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data = "foo", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data = xmlComment.data, with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data += "", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data += "foo", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data += xmlComment.data, with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent = "", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent = "foo", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent = xmlComment.textContent, with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent += "", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent += "foo", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent += xmlComment.textContent, with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue = "", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue = "foo", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue = xmlComment.nodeValue, with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue += "", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue += "foo", with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue += xmlComment.nodeValue, with selected range collapsed at (xmlComment, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data = "", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data = "foo", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data = xmlComment.data, with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data += "", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data += "foo", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data += xmlComment.data, with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent = "", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent = "foo", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent = xmlComment.textContent, with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent += "", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent += "foo", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent += xmlComment.textContent, with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue = "", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue = "foo", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue = xmlComment.nodeValue, with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue += "", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue += "foo", with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue += xmlComment.nodeValue, with selected range collapsed at (xmlComment, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data = "", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data = "foo", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data = xmlComment.data, with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data += "", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data += "foo", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.data += xmlComment.data, with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent = "", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent = "foo", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent = xmlComment.textContent, with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent += "", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent += "foo", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.textContent += xmlComment.textContent, with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue = "", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue = "foo", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue = xmlComment.nodeValue, with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue += "", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue += "foo", with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'xmlComment.nodeValue += xmlComment.nodeValue, with selected range collapsed at (xmlComment, xmlComment.length)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.insertBefore(paras[0], paras[1]), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.insertBefore(paras[0], paras[1]), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.insertBefore(paras[0], paras[1]), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.insertBefore(paras[0], paras[1]), with selected range on testDiv from 0 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.insertBefore(paras[0], paras[1]), with selected range on testDiv from 1 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.insertBefore(paras[0], paras[1]), with selected range collapsed at (testDiv, 2)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range on testDiv from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range on testDiv from 0 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range collapsed at (testDiv, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range on testDiv from 1 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], null), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], null), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], null), with selected range on testDiv from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], null), with selected range on testDiv from 0 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], null), with selected range collapsed at (testDiv, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[1], null), with selected range on testDiv from 1 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(xmlTextNode, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(xmlTextNode, paras[0].firstChild), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(paras[0], paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(testDiv, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(document, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(foreignDoc, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].insertBefore(document.doctype, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.replaceChild(paras[0], paras[0]), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.replaceChild(paras[0], paras[0]), with selected range on testDiv from 0 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.replaceChild(paras[0], paras[0]), with selected range on testDiv from 1 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.replaceChild(paras[0], paras[0]), with selected range collapsed at (testDiv, 2)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range on testDiv from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range on testDiv from 0 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range collapsed at (testDiv, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range on testDiv from 1 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(xmlTextNode, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(paras[0], paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(testDiv, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(document, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(foreignDoc, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].replaceChild(document.doctype, paras[0].firstChild), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.appendChild(testDiv.lastChild), with selected range on testDiv from testDiv.childNodes.length - 2 to testDiv.childNodes.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.appendChild(testDiv.lastChild), with selected range on testDiv from testDiv.childNodes.length - 2 to testDiv.childNodes.length - 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'testDiv.appendChild(testDiv.lastChild), with selected range on testDiv from testDiv.childNodes.length - 1 to testDiv.childNodes.length' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedDiv.appendChild(detachedDiv.lastChild), with selected range collapsed at (detachedDiv.lastChild, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'detachedDiv.appendChild(detachedDiv.lastChild), with selected range collapsed at (detachedDiv, detachedDiv.childNodes.length - 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(paras[1]), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(paras[1]), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(paras[1]), with selected range on testDiv from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(paras[1]), with selected range on testDiv from 0 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(paras[1]), with selected range collapsed at (testDiv, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(paras[1]), with selected range on testDiv from 1 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(xmlTextNode), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(xmlTextNode), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(paras[0]), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(testDiv), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(document), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(foreignDoc), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].appendChild(document.doctype), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (paras[0], 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].parentNode.removeChild(paras[0]), with selected range on paras[0] from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (paras[0], 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (testDiv, 0)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].parentNode.removeChild(paras[0]), with selected range on testDiv from 0 to 1' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (testDiv, 1)' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].parentNode.removeChild(paras[0]), with selected range on testDiv from 0 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].parentNode.removeChild(paras[0]), with selected range on testDiv from 1 to 2' },
-  { file: '/dom/ranges/Range-mutations.html',
-    subtest: 'paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (testDiv, 2)' } ]
+[
+    {
+        "file": "/dom/events/Event-defaultPrevented.html",
+        "subtest": "initEvent should unset defaultPrevented."
+    },
+    {
+        "file": "/dom/interfaces.html",
+        "subtest": "NodeFilter interface: existence and properties of interface object"
+    },
+    {
+        "file": "/dom/nodes/DOMImplementation-createDocument.html",
+        "subtest": "createDocument test 129: \"http://www.w3.org/2000/xmlns/\",\"1foo\",null,\"INVALID_CHARACTER_ERR\""
+    },
+    {
+        "file": "/dom/nodes/Document-createElementNS.html",
+        "subtest": "createElementNS test 129: \"http://www.w3.org/2000/xmlns/\",\"1foo\",\"INVALID_CHARACTER_ERR\""
+    },
+    {
+        "file": "/dom/nodes/Document-createElementNS.html",
+        "subtest": "createElementNS test 168: \"http://www.w3.org/2000/xmlns/\",\"\",\"INVALID_CHARACTER_ERR\""
+    },
+    {
+        "file": "/dom/traversal/TreeWalker-basic.html",
+        "subtest": "Give an invalid root node to document.createTreeWalker()."
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "16,1: resulting range position for range [paras[0], 0, paras[0], 1], node paras[0].firstChild"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "30,3: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node foreignPara1"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "30,4: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node foreignPara1.firstChild"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "30,10: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node foreignPara2"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "30,12: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node xmlElement"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "30,13: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node detachedTextNode"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "30,14: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node foreignTextNode"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "30,15: resulting range position for range [detachedTextNode, 0, detachedTextNode, 8], node processingInstruction"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "31,0: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node paras[0]"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "31,1: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node paras[0].firstChild"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "31,2: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node paras[1].firstChild"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "31,5: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node detachedPara1"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "31,6: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node detachedPara1.firstChild"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "31,12: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node xmlElement"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "31,15: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node processingInstruction"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "31,17: resulting range position for range [detachedForeignTextNode, 0, detachedForeignTextNode, 8], node comment"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,0: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node paras[0]"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,1: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node paras[0].firstChild"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,2: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node paras[1].firstChild"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,3: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node foreignPara1"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,4: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node foreignPara1.firstChild"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,5: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node detachedPara1"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,6: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node detachedPara1.firstChild"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,8: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node detachedDiv"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,10: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node foreignPara2"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,14: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node foreignTextNode"
+    },
+    {
+        "file": "/dom/ranges/Range-insertNode.html",
+        "subtest": "32,17: resulting range position for range [detachedXmlTextNode, 0, detachedXmlTextNode, 8], node comment"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(376), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(0), with selected range collapsed at (paras[0].firstChild, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(1), with selected range collapsed at (paras[0].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(paras[0].firstChild.length), with selected range collapsed at (paras[0].firstChild, paras[0].firstChild.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(1), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(2), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(3), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.splitText(0), with selected range collapsed at (paras[1].firstChild, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.splitText(1), with selected range collapsed at (paras[1].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.splitText(paras[1].firstChild.length), with selected range collapsed at (paras[1].firstChild, paras[1].firstChild.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.splitText(1), with selected range collapsed at (xmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.splitText(xmlTextNode.length), with selected range collapsed at (xmlTextNode, xmlTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(1), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(1), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(1), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(1), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(2), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(3), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(1), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(2), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.splitText(3), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(376, \"foo\"), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(1, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(2, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(3, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(376, \"\"), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(1, \"\"), with selected range collapsed at (paras[0].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(1, \"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(2, \"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(3, \"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.insertData(1, \"\"), with selected range collapsed at (paras[1].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.insertData(1, \"\"), with selected range collapsed at (xmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.insertData(detachedTextNode.length, \"\"), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.insertData(detachedForeignTextNode.length, \"\"), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.insertData(detachedXmlTextNode.length, \"\"), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.insertData(376, \"foo\"), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.insertData(0, \"foo\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.insertData(376, \"\"), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.insertData(0, \"\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.insertData(0, \"foo\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.insertData(0, \"\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(1, \"foo\"), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(1, \"foo\"), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(1, \"foo\"), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(1, \"foo\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(2, \"foo\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(3, \"foo\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(1, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(2, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.insertData(3, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"foo\"), with selected range collapsed at (paras[0].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"foo\"), with selected range on paras[0].firstChild from 1 to paras[0].firstChild.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"\"), with selected range collapsed at (paras[0].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.appendData(\"foo\"), with selected range collapsed at (paras[1].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.appendData(\"\"), with selected range collapsed at (paras[1].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.appendData(\"foo\"), with selected range collapsed at (xmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.appendData(\"\"), with selected range collapsed at (xmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.appendData(\"foo\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.appendData(\"\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.appendData(\"foo\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.appendData(\"\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"\"), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"\"), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"\"), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"foo\"), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.appendData(\"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(376, 2), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(1, 2), with selected range collapsed at (paras[0].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(1, 2), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(2, 2), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(3, 2), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(376, 0), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(0, 0), with selected range collapsed at (paras[0].firstChild, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(1, 0), with selected range collapsed at (paras[0].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(paras[0].firstChild.length, 0), with selected range collapsed at (paras[0].firstChild, paras[0].firstChild.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(1, 0), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(2, 0), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(3, 0), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(376, 631), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.deleteData(1, 2), with selected range collapsed at (paras[1].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.deleteData(0, 0), with selected range collapsed at (paras[1].firstChild, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.deleteData(1, 0), with selected range collapsed at (paras[1].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.deleteData(paras[1].firstChild.length, 0), with selected range collapsed at (paras[1].firstChild, paras[1].firstChild.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.deleteData(1, 2), with selected range collapsed at (xmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.deleteData(1, 0), with selected range collapsed at (xmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.deleteData(xmlTextNode.length, 0), with selected range collapsed at (xmlTextNode, xmlTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.deleteData(detachedTextNode.length, 2), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.deleteData(0, 631), with unselected range collapsed at (detachedTextNode, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.deleteData(1, 631), with unselected range collapsed at (detachedTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.deleteData(detachedTextNode.length, 631), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.deleteData(1, 631), with unselected range on detachedTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.deleteData(2, 631), with unselected range on detachedTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.deleteData(3, 631), with unselected range on detachedTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.deleteData(detachedForeignTextNode.length, 2), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.deleteData(0, 631), with unselected range collapsed at (detachedForeignTextNode, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.deleteData(1, 631), with unselected range collapsed at (detachedForeignTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.deleteData(detachedForeignTextNode.length, 631), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.deleteData(1, 631), with unselected range on detachedForeignTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.deleteData(2, 631), with unselected range on detachedForeignTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.deleteData(3, 631), with unselected range on detachedForeignTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.deleteData(detachedXmlTextNode.length, 2), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.deleteData(0, 631), with unselected range collapsed at (detachedXmlTextNode, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.deleteData(1, 631), with unselected range collapsed at (detachedXmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.deleteData(detachedXmlTextNode.length, 631), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.deleteData(1, 631), with unselected range on detachedXmlTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.deleteData(2, 631), with unselected range on detachedXmlTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.deleteData(3, 631), with unselected range on detachedXmlTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(376, 2), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(0, 2), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(376, 0), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(0, 0), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(1, 0), with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(comment.length, 0), with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(1, 0), with selected range on comment from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(2, 0), with selected range on comment from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(3, 0), with selected range on comment from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(376, 631), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.deleteData(0, 631), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.deleteData(0, 2), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.deleteData(0, 0), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.deleteData(1, 0), with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.deleteData(xmlComment.length, 0), with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.deleteData(0, 631), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(1, 2), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(1, 2), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(1, 2), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(1, 2), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(2, 2), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(3, 2), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(1, 2), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(2, 2), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.deleteData(3, 2), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(376, 0, \"foo\"), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 0, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 0, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 0, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(376, 0, \"\"), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 0, \"\"), with selected range collapsed at (paras[0].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 0, \"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 0, \"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 0, \"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(376, 1, \"foo\"), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 1, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 1, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 1, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(376, 1, \"\"), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 1, \"\"), with selected range collapsed at (paras[0].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 1, \"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 1, \"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 1, \"\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(376, 47, \"foo\"), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 47, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 47, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 47, \"foo\"), with selected range on paras[0].firstChild from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(376, 47, \"\"), with selected range on paras[0].firstChild from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.replaceData(1, 0, \"\"), with selected range collapsed at (paras[1].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[1].firstChild.replaceData(1, 1, \"\"), with selected range collapsed at (paras[1].firstChild, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.replaceData(1, 0, \"\"), with selected range collapsed at (xmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlTextNode.replaceData(1, 1, \"\"), with selected range collapsed at (xmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.replaceData(detachedTextNode.length, 0, \"\"), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.replaceData(detachedTextNode.length, 1, \"\"), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.replaceData(0, 47, \"\"), with unselected range collapsed at (detachedTextNode, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.replaceData(1, 47, \"\"), with unselected range collapsed at (detachedTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.replaceData(detachedTextNode.length, 47, \"\"), with unselected range collapsed at (detachedTextNode, detachedTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.replaceData(1, 47, \"\"), with unselected range on detachedTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.replaceData(2, 47, \"\"), with unselected range on detachedTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedTextNode.replaceData(3, 47, \"\"), with unselected range on detachedTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.replaceData(detachedForeignTextNode.length, 0, \"\"), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.replaceData(detachedForeignTextNode.length, 1, \"\"), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.replaceData(0, 47, \"\"), with unselected range collapsed at (detachedForeignTextNode, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.replaceData(1, 47, \"\"), with unselected range collapsed at (detachedForeignTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.replaceData(detachedForeignTextNode.length, 47, \"\"), with unselected range collapsed at (detachedForeignTextNode, detachedForeignTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.replaceData(1, 47, \"\"), with unselected range on detachedForeignTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.replaceData(2, 47, \"\"), with unselected range on detachedForeignTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedForeignTextNode.replaceData(3, 47, \"\"), with unselected range on detachedForeignTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.replaceData(detachedXmlTextNode.length, 0, \"\"), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.replaceData(detachedXmlTextNode.length, 1, \"\"), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.replaceData(0, 47, \"\"), with unselected range collapsed at (detachedXmlTextNode, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.replaceData(1, 47, \"\"), with unselected range collapsed at (detachedXmlTextNode, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.replaceData(detachedXmlTextNode.length, 47, \"\"), with unselected range collapsed at (detachedXmlTextNode, detachedXmlTextNode.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.replaceData(1, 47, \"\"), with unselected range on detachedXmlTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.replaceData(2, 47, \"\"), with unselected range on detachedXmlTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedXmlTextNode.replaceData(3, 47, \"\"), with unselected range on detachedXmlTextNode from 1 to 3"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(376, 0, \"foo\"), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(0, 0, \"foo\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(376, 0, \"\"), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(0, 0, \"\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(376, 1, \"foo\"), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(0, 1, \"foo\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(376, 1, \"\"), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(0, 1, \"\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(376, 47, \"foo\"), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(0, 47, \"foo\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(376, 47, \"\"), with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.replaceData(0, 47, \"\"), with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.replaceData(0, 0, \"foo\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.replaceData(0, 0, \"\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.replaceData(0, 1, \"foo\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.replaceData(0, 1, \"\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.replaceData(0, 47, \"foo\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.replaceData(0, 47, \"\"), with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 0, \"foo\"), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 0, \"foo\"), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 0, \"foo\"), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 0, \"foo\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 0, \"foo\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 0, \"foo\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 0, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 0, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 0, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 1, \"foo\"), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 1, \"foo\"), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 1, \"foo\"), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 1, \"foo\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 1, \"foo\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 1, \"foo\"), with selected range from (paras[0].firstChild, 1) to (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 1, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 1, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 1, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 47, \"foo\"), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(1, 47, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(2, 47, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].firstChild.replaceData(3, 47, \"foo\"), with selected range from (paras[0], 0) to (paras[0].firstChild, 3)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"foo\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = comment.data, with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"foo\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += comment.data, with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"foo\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = comment.textContent, with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"foo\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += comment.textContent, with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"foo\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = comment.nodeValue, with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"foo\", with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += comment.nodeValue, with selected range collapsed at (comment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"foo\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = comment.data, with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"foo\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += comment.data, with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"foo\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = comment.textContent, with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"foo\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += comment.textContent, with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"foo\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = comment.nodeValue, with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"foo\", with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += comment.nodeValue, with selected range on comment from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"foo\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = comment.data, with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"foo\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += comment.data, with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"foo\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = comment.textContent, with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"foo\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += comment.textContent, with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"foo\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = comment.nodeValue, with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"foo\", with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += comment.nodeValue, with selected range collapsed at (comment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"foo\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = comment.data, with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"foo\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += comment.data, with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"foo\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = comment.textContent, with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"foo\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += comment.textContent, with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"foo\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = comment.nodeValue, with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"foo\", with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += comment.nodeValue, with selected range on comment from 0 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"foo\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = comment.data, with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"foo\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += comment.data, with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"foo\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = comment.textContent, with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"foo\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += comment.textContent, with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"foo\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = comment.nodeValue, with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"foo\", with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += comment.nodeValue, with selected range on comment from 1 to comment.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = \"foo\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data = comment.data, with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += \"foo\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.data += comment.data, with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = \"foo\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent = comment.textContent, with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += \"foo\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.textContent += comment.textContent, with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = \"foo\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue = comment.nodeValue, with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += \"foo\", with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "comment.nodeValue += comment.nodeValue, with selected range collapsed at (comment, comment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data = \"\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data = \"foo\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data = xmlComment.data, with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data += \"\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data += \"foo\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data += xmlComment.data, with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent = \"\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent = \"foo\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent = xmlComment.textContent, with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent += \"\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent += \"foo\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent += xmlComment.textContent, with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue = \"\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue = \"foo\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue = xmlComment.nodeValue, with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue += \"\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue += \"foo\", with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue += xmlComment.nodeValue, with selected range collapsed at (xmlComment, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data = \"\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data = \"foo\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data = xmlComment.data, with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data += \"\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data += \"foo\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data += xmlComment.data, with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent = \"\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent = \"foo\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent = xmlComment.textContent, with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent += \"\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent += \"foo\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent += xmlComment.textContent, with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue = \"\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue = \"foo\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue = xmlComment.nodeValue, with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue += \"\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue += \"foo\", with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue += xmlComment.nodeValue, with selected range collapsed at (xmlComment, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data = \"\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data = \"foo\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data = xmlComment.data, with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data += \"\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data += \"foo\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.data += xmlComment.data, with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent = \"\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent = \"foo\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent = xmlComment.textContent, with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent += \"\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent += \"foo\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.textContent += xmlComment.textContent, with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue = \"\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue = \"foo\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue = xmlComment.nodeValue, with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue += \"\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue += \"foo\", with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "xmlComment.nodeValue += xmlComment.nodeValue, with selected range collapsed at (xmlComment, xmlComment.length)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.insertBefore(paras[0], paras[1]), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.insertBefore(paras[0], paras[1]), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.insertBefore(paras[0], paras[1]), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.insertBefore(paras[0], paras[1]), with selected range on testDiv from 0 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.insertBefore(paras[0], paras[1]), with selected range on testDiv from 1 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.insertBefore(paras[0], paras[1]), with selected range collapsed at (testDiv, 2)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range on testDiv from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range on testDiv from 0 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range collapsed at (testDiv, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], paras[0].firstChild), with selected range on testDiv from 1 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], null), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], null), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], null), with selected range on testDiv from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], null), with selected range on testDiv from 0 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], null), with selected range collapsed at (testDiv, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[1], null), with selected range on testDiv from 1 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(xmlTextNode, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(xmlTextNode, paras[0].firstChild), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(paras[0], paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(testDiv, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(document, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(foreignDoc, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].insertBefore(document.doctype, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.replaceChild(paras[0], paras[0]), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.replaceChild(paras[0], paras[0]), with selected range on testDiv from 0 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.replaceChild(paras[0], paras[0]), with selected range on testDiv from 1 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.replaceChild(paras[0], paras[0]), with selected range collapsed at (testDiv, 2)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range on testDiv from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range on testDiv from 0 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range collapsed at (testDiv, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(paras[1], paras[0].firstChild), with selected range on testDiv from 1 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(xmlTextNode, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(paras[0], paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(testDiv, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(document, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(foreignDoc, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].replaceChild(document.doctype, paras[0].firstChild), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.appendChild(testDiv.lastChild), with selected range on testDiv from testDiv.childNodes.length - 2 to testDiv.childNodes.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.appendChild(testDiv.lastChild), with selected range on testDiv from testDiv.childNodes.length - 2 to testDiv.childNodes.length - 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "testDiv.appendChild(testDiv.lastChild), with selected range on testDiv from testDiv.childNodes.length - 1 to testDiv.childNodes.length"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedDiv.appendChild(detachedDiv.lastChild), with selected range collapsed at (detachedDiv.lastChild, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "detachedDiv.appendChild(detachedDiv.lastChild), with selected range collapsed at (detachedDiv, detachedDiv.childNodes.length - 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(paras[1]), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(paras[1]), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(paras[1]), with selected range on testDiv from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(paras[1]), with selected range on testDiv from 0 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(paras[1]), with selected range collapsed at (testDiv, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(paras[1]), with selected range on testDiv from 1 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(xmlTextNode), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(xmlTextNode), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(paras[0]), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(testDiv), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(document), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(foreignDoc), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].appendChild(document.doctype), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (paras[0], 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].parentNode.removeChild(paras[0]), with selected range on paras[0] from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (paras[0], 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (testDiv, 0)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].parentNode.removeChild(paras[0]), with selected range on testDiv from 0 to 1"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (testDiv, 1)"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].parentNode.removeChild(paras[0]), with selected range on testDiv from 0 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].parentNode.removeChild(paras[0]), with selected range on testDiv from 1 to 2"
+    },
+    {
+        "file": "/dom/ranges/Range-mutations.html",
+        "subtest": "paras[0].parentNode.removeChild(paras[0]), with selected range collapsed at (testDiv, 2)"
+    }
+]
